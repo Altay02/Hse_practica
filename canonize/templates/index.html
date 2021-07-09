@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Canonize matrix</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <textarea id="matrix" name="matrix" rows="6" cols="24" placeholder="matrix"></textarea>
+        <input type="number" id="rows_size" name="rows_size" placeholder="rows_size">
+        <input type="number" id="cols_size" name="cols_size" placeholder="cols_size">
+        <input type="submit" value="Submit" />
+    </form>
+    {% if flag_posted %}
+        <p>Matrix posted! Original matrix</p>
+
+        {% for row in matrix_list %}
+            {{ row }}
+            <br>
+        {% endfor %}
+        <p>Canonized matrix</p>
+        {% for row in can_matrix %}
+            {{ row }}
+            <br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
