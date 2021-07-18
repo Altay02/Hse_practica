@@ -6,8 +6,8 @@
     <form action="" method="post">
         {% csrf_token %}
         <textarea id="matrix" name="matrix" rows="6" cols="24" placeholder="matrix"></textarea>
-        <input type="number" id="rows_size" name="rows_size" placeholder="rows_size">
-        <input type="number" id="cols_size" name="cols_size" placeholder="cols_size">
+        <input type="number" id="rows_size" name="rows_size" placeholder="number  of the rows">
+        <input type="number" id="cols_size" name="cols_size" placeholder="number  of the columns">
         <input type="submit" value="Submit" />
     </form>
     {% if flag_posted %}
